@@ -76,11 +76,11 @@ export default function Navbar() {
         <div className="max-w-6xl mx-auto px-6 md:px-12 h-[68px] flex items-center justify-between">
           {/* Logo */}
           <motion.div whileHover={{ scale: 1.03 }} whileTap={{ scale: 0.97 }}>
-            <NavLink to="/">
+            <NavLink to="/" className="flex items-center leading-none">
               <img
                 src={logo}
                 alt="TimetoMarket-Services"
-                className="h-8 w-auto"
+                className="h-8 w-auto block"
               />
             </NavLink>
           </motion.div>
