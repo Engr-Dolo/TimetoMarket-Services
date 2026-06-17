@@ -45,28 +45,8 @@ export default function PageMeta() {
   const page = meta[pathname] || meta["/"];
 
   useEffect(() => {
-    // Title
     document.title = page.title;
 
-    const setMeta = (selector, attr, value) => {
-      let el = document.querySelector(selector);
-      if (!el) {
-        el = document.createElement("meta");
-        const [attrName] = selector.match(/\[(.+?)=/) || [];
-        if (attrName) {
-          const key = attrName
-            .replace("[", "")
-            .replace("=", "")
-            .replace(/"/g, "")
-            .split("=")[0];
-          // simplified: just use setAttribute
-        }
-        document.head.appendChild(el);
-      }
-      el.setAttribute(attr, value);
-    };
-
-    // Standard meta
     const updateOrCreate = (name, content, isProperty = false) => {
       const attr = isProperty ? "property" : "name";
       let el = document.querySelector(`meta[${attr}="${name}"]`);

@@ -135,6 +135,11 @@ TimetoMarket-Services does not ask you to paste code here.
 export function preventClickjacking() {
     if (window.self !== window.top) {
         document.body.innerHTML = ''
-        window.top.location = window.self.location
+        try {
+            // May throw SecurityError if parent is cross-origin
+            window.top.location = window.self.location
+        } catch (_) {
+            // Cross-origin parent — body already cleared, page is blocked
+        }
     }
 }

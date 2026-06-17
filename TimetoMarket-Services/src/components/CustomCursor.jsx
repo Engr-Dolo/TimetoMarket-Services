@@ -33,7 +33,8 @@ export default function CustomCursor() {
     };
 
     window.addEventListener("mousemove", move);
-    document.querySelectorAll("a, button").forEach((el) => {
+    const interactables = document.querySelectorAll("a, button");
+    interactables.forEach((el) => {
       el.addEventListener("mouseenter", onEnter);
       el.addEventListener("mouseleave", onLeave);
     });
@@ -41,6 +42,10 @@ export default function CustomCursor() {
     const raf = requestAnimationFrame(animate);
     return () => {
       window.removeEventListener("mousemove", move);
+      interactables.forEach((el) => {
+        el.removeEventListener("mouseenter", onEnter);
+        el.removeEventListener("mouseleave", onLeave);
+      });
       cancelAnimationFrame(raf);
     };
   }, []);
