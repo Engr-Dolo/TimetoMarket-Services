@@ -42,7 +42,7 @@ export default function Footer() {
                   target={s.href.startsWith("http") ? "_blank" : undefined}
                   rel="noreferrer"
                   aria-label={s.label}
-                  className="w-10 h-10 rounded-full bg-[#161E2E] border border-white/[0.07] flex items-center justify-center text-[15px] hover:border-[#D97D54]/40 active:scale-95 transition-all"
+                  className="w-11 h-11 rounded-full bg-[#161E2E] border border-white/[0.07] flex items-center justify-center text-[15px] hover:border-[#D97D54]/40 active:scale-95 transition-all"
                 >
                   {s.icon}
                 </a>

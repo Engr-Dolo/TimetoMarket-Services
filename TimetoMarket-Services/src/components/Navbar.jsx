@@ -162,7 +162,7 @@ export default function Navbar() {
 
           {/* Mobile hamburger */}
           <button
-            className="md:hidden flex flex-col justify-center items-center w-10 h-10 gap-1.5 relative z-50"
+            className="md:hidden flex flex-col justify-center items-center w-11 h-11 gap-1.5 relative z-50"
             onClick={() => setMenuOpen(!menuOpen)}
             aria-label="Toggle menu"
           >
