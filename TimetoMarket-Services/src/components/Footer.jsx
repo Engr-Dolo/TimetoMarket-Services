@@ -67,7 +67,7 @@ export default function Footer() {
                   <Link
                     key={to}
                     to={to}
-                    className="text-[13px] md:text-[14px] text-[#E8E2D9]/50 hover:text-[#D97D54] transition-colors min-h-[32px] flex items-center"
+                    className="text-[13px] md:text-[14px] text-[#E8E2D9]/50 hover:text-[#D97D54] transition-colors min-h-[44px] flex items-center"
                   >
                     {label}
                   </Link>
@@ -97,7 +97,7 @@ export default function Footer() {
                     href={c.href}
                     target={c.href.startsWith("http") ? "_blank" : undefined}
                     rel="noreferrer"
-                    className="text-[13px] md:text-[14px] text-[#E8E2D9]/50 hover:text-[#D97D54] transition-colors min-h-[32px] flex items-center"
+                    className="text-[13px] md:text-[14px] text-[#E8E2D9]/50 hover:text-[#D97D54] transition-colors min-h-[44px] flex items-center"
                   >
                     {c.label}
                   </a>

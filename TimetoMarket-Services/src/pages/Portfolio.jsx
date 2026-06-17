@@ -126,7 +126,7 @@ export default function Portfolio() {
               <button
                 key={cat}
                 onClick={() => setActive(cat)}
-                className={`flex-shrink-0 px-4 py-2 rounded-full text-[12px] font-semibold tracking-wide transition-all min-h-[36px] ${
+                className={`flex-shrink-0 px-4 py-2 rounded-full text-[12px] font-semibold tracking-wide transition-all min-h-[44px] ${
                   active === cat
                     ? "bg-[#D97D54] text-white"
                     : "bg-[#161E2E] text-[#E8E2D9]/50 border border-white/[0.07] hover:text-white"

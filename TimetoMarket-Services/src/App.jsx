@@ -46,7 +46,7 @@ function AnimatedRoutes() {
 
 export default function App() {
   return (
-    <Router>
+    <Router basename="/TimetoMarket-Services">
       <PageMeta />
       <ScrollToTop />
       <CustomCursor />
