@@ -1,7 +1,13 @@
 import { Link } from "react-router-dom";
 import photo from "../assets/photo.jpg";
+import useInView from "../hooks/useInView";
 
 export default function About() {
+  const [storyRef, storyInView] = useInView();
+  const [valuesRef, valuesInView] = useInView();
+  const [skillsRef, skillsInView] = useInView();
+  const [ctaRef, ctaInView] = useInView();
+
   return (
     <div className="bg-[#0A0F1A] text-[#E8E2D9] pt-[68px]">
       {/* Header */}
@@ -34,7 +40,10 @@ export default function About() {
       </section>
 
       {/* Story */}
-      <section className="py-20 border-b border-white/[0.07]">
+      <section
+        ref={storyRef}
+        className={`py-20 border-b border-white/[0.07] transition-all duration-700 ease-out ${storyInView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"}`}
+      >
         <div className="max-w-6xl mx-auto px-6 md:px-12">
           <div className="max-w-[680px]">
             <span className="text-[11px] font-bold tracking-[0.22em] uppercase text-[#D97D54] block mb-6">
@@ -65,7 +74,10 @@ export default function About() {
       </section>
 
       {/* Values */}
-      <section className="py-20 border-b border-white/[0.07]">
+      <section
+        ref={valuesRef}
+        className={`py-20 border-b border-white/[0.07] transition-all duration-700 ease-out ${valuesInView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"}`}
+      >
         <div className="max-w-6xl mx-auto px-6 md:px-12">
           <span className="text-[11px] font-bold tracking-[0.22em] uppercase text-[#D97D54] block mb-4">
             What I Stand For
@@ -111,7 +123,10 @@ export default function About() {
       </section>
 
       {/* Skills */}
-      <section className="py-20 border-b border-white/[0.07]">
+      <section
+        ref={skillsRef}
+        className={`py-20 border-b border-white/[0.07] transition-all duration-700 ease-out ${skillsInView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"}`}
+      >
         <div className="max-w-6xl mx-auto px-6 md:px-12">
           <span className="text-[11px] font-bold tracking-[0.22em] uppercase text-[#D97D54] block mb-4">
             Skills & Stack
@@ -150,7 +165,10 @@ export default function About() {
       </section>
 
       {/* CTA */}
-      <section className="py-20">
+      <section
+        ref={ctaRef}
+        className={`py-20 transition-all duration-700 ease-out ${ctaInView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"}`}
+      >
         <div className="max-w-6xl mx-auto px-6 md:px-12 text-center">
           <h2 className="font-display font-black text-4xl text-white mb-4">
             Ready to work{" "}
