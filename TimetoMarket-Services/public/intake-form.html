@@ -8,6 +8,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,700;0,900&display=swap" rel="stylesheet" />
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -341,7 +342,13 @@
 
 <!-- Header -->
 <header class="page-header">
-  <a href="/TimetoMarket-Services/" class="logo">T<span>2</span>M Services</a>
+  <a href="/TimetoMarket-Services/" style="display:inline-flex;align-items:center;line-height:1;">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 60" height="32" style="width:auto;display:block;">
+      <rect width="200" height="60" rx="14" fill="#0A0F1A"/>
+      <text x="58" y="42" text-anchor="middle" font-family="Inter,system-ui,sans-serif" font-weight="900" font-size="32" fill="#ffffff">TT</text>
+      <text x="142" y="42" text-anchor="middle" font-family="Inter,system-ui,sans-serif" font-weight="900" font-size="32" fill="#D97D54">MS</text>
+    </svg>
+  </a>
   <a href="/TimetoMarket-Services/" class="back-link">← Back to site</a>
 </header>
 
@@ -525,31 +532,31 @@
         <div class="section-sub">Estimated Budget <span class="req">*</span></div>
         <div class="budget-grid" style="margin-bottom: 28px">
           <label class="opt radio opt-lg">
-            <input type="radio" name="budget" value="Under $500" />
+            <input type="radio" name="budget" value="$150 – $250" />
             <div class="opt-inner">
               <div class="opt-box"><div class="opt-mark" style="width:8px;height:8px;border-radius:50%;background:white"></div></div>
-              <div><span class="opt-label">Under $500</span><div class="opt-sub">Starter</div></div>
+              <div><span class="opt-label">$150 – $250</span><div class="opt-sub">Starter</div></div>
             </div>
           </label>
           <label class="opt radio opt-lg">
-            <input type="radio" name="budget" value="$500 – $1,500" />
+            <input type="radio" name="budget" value="$250 – $350" />
             <div class="opt-inner">
               <div class="opt-box"><div class="opt-mark" style="width:8px;height:8px;border-radius:50%;background:white"></div></div>
-              <div><span class="opt-label">$500–$1,500</span><div class="opt-sub">Small Business</div></div>
+              <div><span class="opt-label">$250 – $350</span><div class="opt-sub">Standard</div></div>
             </div>
           </label>
           <label class="opt radio opt-lg">
-            <input type="radio" name="budget" value="$1,500 – $5,000" />
+            <input type="radio" name="budget" value="$350 – $500" />
             <div class="opt-inner">
               <div class="opt-box"><div class="opt-mark" style="width:8px;height:8px;border-radius:50%;background:white"></div></div>
-              <div><span class="opt-label">$1,500–$5,000</span><div class="opt-sub">Growth</div></div>
+              <div><span class="opt-label">$350 – $500</span><div class="opt-sub">Business</div></div>
             </div>
           </label>
           <label class="opt radio opt-lg">
-            <input type="radio" name="budget" value="$5,000+" />
+            <input type="radio" name="budget" value="$500+" />
             <div class="opt-inner">
               <div class="opt-box"><div class="opt-mark" style="width:8px;height:8px;border-radius:50%;background:white"></div></div>
-              <div><span class="opt-label">$5,000+</span><div class="opt-sub">Enterprise</div></div>
+              <div><span class="opt-label">$500+</span><div class="opt-sub">Premium</div></div>
             </div>
           </label>
           <label class="opt radio opt-lg">
