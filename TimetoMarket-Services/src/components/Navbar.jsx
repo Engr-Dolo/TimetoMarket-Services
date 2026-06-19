@@ -61,6 +61,8 @@ export default function Navbar() {
     { to: "/about", label: "About" },
   ];
 
+  const intakeHref = `${import.meta.env.BASE_URL}intake-form.html`;
+
   return (
     <>
       <motion.nav
@@ -137,8 +139,16 @@ export default function Navbar() {
             ))}
           </ul>
 
-          {/* CTA */}
-          <div className="hidden md:block">
+          {/* CTA group */}
+          <div className="hidden md:flex items-center gap-2">
+            <a
+              href={intakeHref}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-[13px] font-medium px-4 py-2 rounded-full border border-white/[0.1] text-[#E8E2D9]/60 hover:text-white hover:border-white/20 transition-all duration-200 flex items-center gap-1.5 min-h-[36px]"
+            >
+              <span>📋</span> Intake Form
+            </a>
             <MagneticButton
               to="/contact"
               className="relative overflow-hidden px-5 py-2.5 rounded-full bg-[#D97D54] text-white font-semibold text-[13px] group block"
@@ -197,28 +207,41 @@ export default function Navbar() {
             transition={{ duration: 0.3, ease: [0.25, 0.46, 0.45, 0.94] }}
             className="fixed inset-0 z-[90] bg-[#0A0F1A]/97 backdrop-blur-2xl flex flex-col items-center justify-center gap-6"
           >
-            {[...links, { to: "/contact", label: "Get Started" }].map(
-              ({ to, label }, i) => (
+            {[...links, { to: null, label: "Intake Form", href: intakeHref }, { to: "/contact", label: "Get Started" }].map(
+              ({ to, label, href }, i) => (
                 <motion.div
-                  key={to}
+                  key={label}
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: i * 0.07, duration: 0.4 }}
                 >
-                  <NavLink
-                    to={to}
-                    end={to === "/"}
-                    onClick={() => setMenuOpen(false)}
-                    className={({ isActive }) =>
-                      `text-[32px] font-display font-black transition-colors duration-200 ${
-                        isActive || label === "Get Started"
-                          ? "text-[#D97D54]"
-                          : "text-white hover:text-[#D97D54]"
-                      }`
-                    }
-                  >
-                    {label}
-                  </NavLink>
+                  {href ? (
+                    <a
+                      href={href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      onClick={() => setMenuOpen(false)}
+                      className="text-[32px] font-display font-black transition-colors duration-200 text-white hover:text-[#D97D54]"
+                      style={{ textDecoration: "none" }}
+                    >
+                      {label}
+                    </a>
+                  ) : (
+                    <NavLink
+                      to={to}
+                      end={to === "/"}
+                      onClick={() => setMenuOpen(false)}
+                      className={({ isActive }) =>
+                        `text-[32px] font-display font-black transition-colors duration-200 ${
+                          isActive || label === "Get Started"
+                            ? "text-[#D97D54]"
+                            : "text-white hover:text-[#D97D54]"
+                        }`
+                      }
+                    >
+                      {label}
+                    </NavLink>
+                  )}
                 </motion.div>
               ),
             )}

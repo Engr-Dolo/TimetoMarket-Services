@@ -137,6 +137,40 @@ export default function Contact() {
         </div>
       </section>
 
+      {/* Intake Form CTA */}
+      <section className="py-10 border-b border-white/[0.07]">
+        <div className="max-w-6xl mx-auto px-5 sm:px-6 md:px-12">
+          <motion.a
+            href={`${import.meta.env.BASE_URL}intake-form.html`}
+            target="_blank"
+            rel="noopener noreferrer"
+            initial={{ opacity: 0, y: 16 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.15 }}
+            className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-5 bg-[#161E2E] border border-[#D97D54]/25 rounded-2xl px-6 py-5 hover:border-[#D97D54]/50 transition-all group no-underline"
+            style={{ textDecoration: "none", display: "flex" }}
+          >
+            <div className="flex items-start gap-4">
+              <div className="w-11 h-11 rounded-xl bg-[#D97D54]/10 border border-[#D97D54]/20 flex items-center justify-center text-[18px] flex-shrink-0 mt-0.5">
+                📋
+              </div>
+              <div>
+                <div className="text-[13px] font-bold tracking-[0.1em] uppercase text-[#D97D54] mb-1">
+                  Starting a new project?
+                </div>
+                <p className="text-[14px] text-[#E8E2D9]/60 leading-[1.6] max-w-[460px]">
+                  Fill in our <span className="text-white font-semibold">Project Intake Form</span> for a detailed brief — services, budget, timeline and more. I'll respond with a personalised consultation plan.
+                </p>
+              </div>
+            </div>
+            <span className="flex items-center gap-2 text-[13px] font-semibold text-[#D97D54] whitespace-nowrap group-hover:gap-3 transition-all flex-shrink-0">
+              Open Intake Form
+              <span className="text-[16px]">→</span>
+            </span>
+          </motion.a>
+        </div>
+      </section>
+
       {/* Form + Info */}
       <section className="py-16 md:py-20">
         <div className="max-w-6xl mx-auto px-5 sm:px-6 md:px-12">
