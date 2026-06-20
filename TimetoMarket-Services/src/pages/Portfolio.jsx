@@ -212,8 +212,6 @@ export default function Portfolio() {
                     </div>
                     <a
                       href={demo.link}
-                      target={demo.status === "Demo Ready" ? "_blank" : undefined}
-                      rel={demo.status === "Demo Ready" ? "noopener noreferrer" : undefined}
                       className="w-full flex items-center justify-center gap-2 py-3 rounded-xl border border-white/[0.07] text-[12px] md:text-[13px] font-semibold text-white/60 hover:text-white hover:border-[#D97D54]/30 active:scale-[0.98] transition-all min-h-[44px]"
                     >
                       {demo.status === "Demo Ready"
