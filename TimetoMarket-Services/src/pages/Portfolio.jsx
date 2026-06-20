@@ -12,6 +12,7 @@ const demos = [
     desc: "Patient triage, appointment booking and AI symptom checker for a 24/7 clinic in Monrovia.",
     tags: ["React", "AI Chatbot", "Booking System"],
     icon: "🏥",
+    preview: "previews/sos-medical.png",
     color: "#3E5C4A",
     status: "Demo Ready",
     link: `${BASE}/sos-medical/`,
@@ -23,6 +24,7 @@ const demos = [
     desc: "Interactive digital menu, WhatsApp ordering and AI dish recommendation engine.",
     tags: ["Menu System", "WhatsApp", "AI Recs"],
     icon: "🍽️",
+    preview: "previews/tides-restaurant.png",
     color: "#D97D54",
     status: "Demo Ready",
     link: `${BASE}/tides-restaurant/`,
@@ -34,6 +36,7 @@ const demos = [
     desc: "Crop export documentation, buyer proposal generator and inventory dashboard.",
     tags: ["Dashboard", "AI Docs", "Export Tools"],
     icon: "🌱",
+    preview: "previews/gro-green.png",
     color: "#3E5C4A",
     status: "Demo Ready",
     link: `${BASE}/gro-green/`,
@@ -45,6 +48,7 @@ const demos = [
     desc: "AI-powered route optimization dashboard and WhatsApp order management system.",
     tags: ["Route AI", "Dashboard", "WhatsApp Bot"],
     icon: "🚚",
+    preview: "previews/libdelivery.png",
     color: "#D97D54",
     status: "Demo Ready",
     link: `${BASE}/libdelivery/`,
@@ -56,6 +60,7 @@ const demos = [
     desc: "Online booking platform, service catalogue and client management system.",
     tags: ["Booking", "CRM", "Mobile-first"],
     icon: "💅",
+    preview: "previews/salon-spa.png",
     color: "#7B5EA7",
     status: "Demo Ready",
     link: `${BASE}/salon-spa/`,
@@ -67,6 +72,7 @@ const demos = [
     desc: "Community platform with member profiles, event listings and resource library.",
     tags: ["Community", "Events", "Directory"],
     icon: "🚀",
+    preview: null,
     color: "#1A6B8A",
     status: "Coming Soon",
     link: "#",
@@ -163,10 +169,21 @@ export default function Portfolio() {
                 >
                   {/* Browser mockup */}
                   <div
-                    className="relative h-[180px] md:h-[200px] flex items-center justify-center flex-shrink-0"
+                    className="relative h-[180px] md:h-[200px] flex items-center justify-center flex-shrink-0 overflow-hidden"
                     style={{ background: `${demo.color}15` }}
                   >
-                    <div className="absolute top-0 left-0 right-0 h-8 bg-[#0A0F1A]/70 flex items-center px-3 gap-1.5">
+                    {demo.preview ? (
+                      <img
+                        src={`${import.meta.env.BASE_URL}${demo.preview}`}
+                        alt={`${demo.title} preview`}
+                        className="absolute inset-0 w-full h-full object-cover object-top opacity-90 group-hover:opacity-100 group-hover:scale-105 transition-all duration-500"
+                      />
+                    ) : (
+                      <span className="text-[52px] md:text-[64px] select-none">
+                        {demo.icon}
+                      </span>
+                    )}
+                    <div className="absolute top-0 left-0 right-0 h-8 bg-[#0A0F1A]/80 backdrop-blur-sm flex items-center px-3 gap-1.5 z-10">
                       <span className="w-2 h-2 rounded-full bg-red-500/60 flex-shrink-0" />
                       <span className="w-2 h-2 rounded-full bg-yellow-500/60 flex-shrink-0" />
                       <span className="w-2 h-2 rounded-full bg-green-500/60 flex-shrink-0" />
@@ -175,11 +192,8 @@ export default function Portfolio() {
                         {demo.title.toLowerCase().replace(/[\s&]+/g, "-").replace(/-+/g, "-")}
                       </span>
                     </div>
-                    <span className="text-[52px] md:text-[64px] select-none">
-                      {demo.icon}
-                    </span>
                     <div
-                      className={`absolute top-10 right-3 px-2 py-1 rounded-full text-[10px] font-bold flex-shrink-0 ${
+                      className={`absolute top-10 right-3 px-2 py-1 rounded-full text-[10px] font-bold flex-shrink-0 z-10 ${
                         demo.status === "Demo Ready"
                           ? "bg-green-500/10 text-green-400 border border-green-500/20"
                           : "bg-[#D97D54]/10 text-[#D97D54] border border-[#D97D54]/20"
