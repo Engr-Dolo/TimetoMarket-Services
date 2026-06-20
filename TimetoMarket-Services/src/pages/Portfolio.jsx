@@ -2,6 +2,8 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 
+const BASE = "https://engr-dolo.github.io/TimetoMarket-Demos";
+
 const demos = [
   {
     id: 1,
@@ -12,51 +14,51 @@ const demos = [
     icon: "🏥",
     color: "#3E5C4A",
     status: "Demo Ready",
-    link: "#",
+    link: `${BASE}/sos-medical/`,
   },
   {
     id: 2,
-    title: "Tides Restaurant",
+    title: "Tides Restaurant & Bar",
     category: "Food & Dining",
     desc: "Interactive digital menu, WhatsApp ordering and AI dish recommendation engine.",
     tags: ["Menu System", "WhatsApp", "AI Recs"],
     icon: "🍽️",
     color: "#D97D54",
-    status: "Coming Soon",
-    link: "#",
+    status: "Demo Ready",
+    link: `${BASE}/tides-restaurant/`,
   },
   {
     id: 3,
-    title: "Gro Green Agribusiness",
+    title: "Gro-Green Farms",
     category: "Agriculture",
     desc: "Crop export documentation, buyer proposal generator and inventory dashboard.",
     tags: ["Dashboard", "AI Docs", "Export Tools"],
     icon: "🌱",
     color: "#3E5C4A",
-    status: "Coming Soon",
-    link: "#",
+    status: "Demo Ready",
+    link: `${BASE}/gro-green/`,
   },
   {
     id: 4,
-    title: "LIBdelivery Platform",
+    title: "LibDelivery",
     category: "Logistics",
     desc: "AI-powered route optimization dashboard and WhatsApp order management system.",
     tags: ["Route AI", "Dashboard", "WhatsApp Bot"],
     icon: "🚚",
     color: "#D97D54",
-    status: "Coming Soon",
-    link: "#",
+    status: "Demo Ready",
+    link: `${BASE}/libdelivery/`,
   },
   {
     id: 5,
-    title: "Local Salon & Spa",
+    title: "Divine Glam Salon & Spa",
     category: "Beauty & Wellness",
     desc: "Online booking platform, service catalogue and client management system.",
     tags: ["Booking", "CRM", "Mobile-first"],
     icon: "💅",
     color: "#7B5EA7",
-    status: "Coming Soon",
-    link: "#",
+    status: "Demo Ready",
+    link: `${BASE}/salon-spa/`,
   },
   {
     id: 6,
@@ -169,8 +171,8 @@ export default function Portfolio() {
                       <span className="w-2 h-2 rounded-full bg-yellow-500/60 flex-shrink-0" />
                       <span className="w-2 h-2 rounded-full bg-green-500/60 flex-shrink-0" />
                       <span className="flex-1 mx-2 h-4 bg-white/5 rounded text-[9px] md:text-[10px] text-white/25 flex items-center px-2 overflow-hidden">
-                        ttms.demo/
-                        {demo.title.toLowerCase().replace(/\s+/g, "-")}
+                        engr-dolo.github.io/TimetoMarket-Demos/
+                        {demo.title.toLowerCase().replace(/[\s&]+/g, "-").replace(/-+/g, "-")}
                       </span>
                     </div>
                     <span className="text-[52px] md:text-[64px] select-none">
@@ -210,6 +212,8 @@ export default function Portfolio() {
                     </div>
                     <a
                       href={demo.link}
+                      target={demo.status === "Demo Ready" ? "_blank" : undefined}
+                      rel={demo.status === "Demo Ready" ? "noopener noreferrer" : undefined}
                       className="w-full flex items-center justify-center gap-2 py-3 rounded-xl border border-white/[0.07] text-[12px] md:text-[13px] font-semibold text-white/60 hover:text-white hover:border-[#D97D54]/30 active:scale-[0.98] transition-all min-h-[44px]"
                     >
                       {demo.status === "Demo Ready"
