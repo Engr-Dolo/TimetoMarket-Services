@@ -72,10 +72,10 @@ const demos = [
     desc: "Community platform with member profiles, event listings and resource library.",
     tags: ["Community", "Events", "Directory"],
     icon: "🚀",
-    preview: null,
+    preview: "previews/startup-hub.png",
     color: "#1A6B8A",
-    status: "Coming Soon",
-    link: "#",
+    status: "Demo Ready",
+    link: `${BASE}/startup-hub/`,
   },
 ];
 
